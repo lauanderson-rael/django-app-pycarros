@@ -1,0 +1,29 @@
+aula -> 043
+
+----- libs -----
+pip install django
+python -m pip install Pillow
+
+
+----- comandos -----
+RODAR O PROJETO
+   python3 manage.py runserver 8000
+CRIAR UMA NOVA APP
+   python3 manage.py startapp cars
+AJUDA
+   django-admin --help
+INICIAR BANCO - JA COM TABELAS INTERNAS PRONTAS ou ATUALIZAR
+   python3 manage.py makemigrations   (procura todos os models dentro da app e gera arquivos)
+   python3 manage.py migrate          (traduz os migrations para sql)
+CRIAR SUPER USUARIO
+
+
+----- resumo pastas -----
+__init__.py -- para o interpretador saber que ali é um pacote de codigos
+asgi.py -- produção
+settings.py -- configuracoes, banco de dados, apps, etc..
+urls.py -- rotas do sistema
+wsgi.py -- produção
+
+
+migrations - codigos python que resultam em comandos para o banco
