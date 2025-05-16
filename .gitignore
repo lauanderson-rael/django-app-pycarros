@@ -20,7 +20,7 @@ ENV/
 *.log
 *.pot
 *.pyc
-db.sqlite3
+
 db.sqlite3-journal
 
 # Configs e segredos
@@ -37,7 +37,7 @@ db.sqlite3-journal
 # Static/media (caso sejam gerados pelo collectstatic ou upload)
 staticfiles/
 static/
-media/
+
 
 # Cache/temporários
 *.swp
