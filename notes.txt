@@ -1,29 +1,53 @@
 aula -> 046
 
------ libs -----
+----- libs iniciais -----
 pip install django
 python -m pip install Pillow
 
+----- gerar arquivo/baixar libs -----
+pip freeze > requirements.txt
+pip install -r requirements.txt
 
 ----- comandos -----
-RODAR O PROJETO
-   python3 manage.py runserver 8000
-CRIAR UMA NOVA APP
-   python3 manage.py startapp cars
-AJUDA
-   django-admin --help
-INICIAR BANCO - JA COM TABELAS INTERNAS PRONTAS ou ATUALIZAR
-   python3 manage.py makemigrations   (procura todos os models dentro da app e gera arquivos)
-   python3 manage.py migrate          (traduz os migrations para sql)
-CRIAR SUPER USUARIO
+python3 manage.py runserver 8000      (RODAR O PROJETO)
+python3 manage.py startapp cars       (CRIAR UMA NOVA APP)
+django-admin --help                   (AJUDA COM OS COMANDOS)
+python3 manage.py makemigrations      (INICIAR BANCO - PROCURAR OS MODELS DENTRO DA APP E GERA ARQVS)
+python3 manage.py migrate             (TRADUZ MIGRATIONS EM SQL)
+python3 manage.py createsuperuser     (CRIAR SUPER USUARIO)
 
 
------ resumo pastas -----
+----- resumos/explicacoes -----
 __init__.py -- para o interpretador saber que ali é um pacote de codigos
 asgi.py -- produção
 settings.py -- configuracoes, banco de dados, apps, etc..
 urls.py -- rotas do sistema
 wsgi.py -- produção
+forms.py -- Para criar formulários customizados
+migrations? - codigos python que resultam em comandos para o banco
 
 
-migrations - codigos python que resultam em comandos para o banco
+
+
+
+
+--- ESTRUTURA DO PROJETO ---
+meuprojeto/
+├── manage.py
+├── meuprojeto/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── minhaapp/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── views.py
+│   ├── forms.py        
+│   ├── urls.py          
+│   └── migrations/
+│       └── __init__.py
