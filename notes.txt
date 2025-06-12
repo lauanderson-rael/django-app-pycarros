@@ -4,6 +4,9 @@ aula -> 048
 pip install django
 python -m pip install Pillow
 
+admin
+lauanderson
+
 ----- gerar arquivo/baixar libs -----
 pip freeze > requirements.txt
 pip install -r requirements.txt
@@ -28,9 +31,6 @@ migrations? - codigos python que resultam em comandos para o banco
 
 
 
-
-
-
 --- ESTRUTURA DO PROJETO ---
 meuprojeto/
 ├── manage.py
@@ -47,7 +47,7 @@ meuprojeto/
 │   ├── models.py
 │   ├── tests.py
 │   ├── views.py
-│   ├── forms.py        
-│   ├── urls.py          
+│   ├── forms.py
+│   ├── urls.py
 │   └── migrations/
 │       └── __init__.py
