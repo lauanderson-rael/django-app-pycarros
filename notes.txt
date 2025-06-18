@@ -1,9 +1,10 @@
-aula -> 052
+aula -> 055
 
 ----- libs iniciais -----
 pip install django
 python -m pip install Pillow
 
+---- users ----
 admin
 lauanderson
 
@@ -51,3 +52,9 @@ meuprojeto/
 │   ├── urls.py
 │   └── migrations/
 │       └── __init__.py
+
+
+
+anotacoes:
+functions based views -> cada url está ligada á uma funcao
+class based views ->
