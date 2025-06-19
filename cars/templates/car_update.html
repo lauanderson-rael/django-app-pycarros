@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+
+  form {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  table td {
+    padding: 5px 0;
+  }
+
+
+
+  .buttons-container {
+    text-align: center;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    background: #b424aa;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .btn-secondary {
+    background: #666;
+  }
+
+  a{
+    text-decoration: none;
+  }
+</style>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1>Editar Carro</h1>
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <div>
+        <div class="buttons-container">
+            <input type="submit" value="Salvar alterações" class="btn btn-primary">
+             <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
+            <a href="{% url 'cars_list' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

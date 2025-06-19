@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  .car_card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 40px auto 20px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .car_card:hover {
+    transform: translateY(-5px);
+  }
+
+  .car_card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .car_card h2 {
+    margin: 15px 0 10px;
+    font-size: 22px;
+    color: #333;
+  }
+
+  .car_card p {
+    margin: 6px 0;
+    color: #666;
+    font-size: 16px;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: #b424aa;
+  }
+
+  .btn-primary:hover {
+    background-color: #6f1a6a;
+  }
+
+  .btn-danger {
+    background-color: #e63946;
+  }
+
+  .btn-danger:hover {
+    background-color: #a3161f;
+  }
+</style>
+
+
+<div class="car_card">
+    <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }}">
+    <h2>{{ object.model }} {{ object.brand }}</h2>
+    <p><strong>Ano de fabricação:</strong> {{ object.factory_year }}</p>
+    <p><strong>Ano de modelo:</strong> {{ object.model_year }}</p>
+    <p><strong>Placa:</strong> {{ object.plate }}</p>
+    <p><strong>Preço:</strong> {{ object.value }}</p>
+
+</div>
+
+<div class="buttons-container">
+    <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Editar</a>
+    <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
+</div>
+
+{% endblock %}

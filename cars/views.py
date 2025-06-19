@@ -1,6 +1,7 @@
 from cars.models import Car
 from cars.forms import CarModelForm
-from django.views.generic import ListView, CreateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
 
 # ja sabe que é GET, pois é uma view de listagem
@@ -17,12 +18,32 @@ class CarsListView(ListView):
       return cars
 
 
-
 class NewCarCreteView(CreateView):
    model = Car
    form_class = CarModelForm
    template_name = 'new_car.html'
    success_url = '/cars/'
+
+
+class CarDetailView(DetailView):
+   model = Car
+   template_name = 'car_detail.html'
+
+
+class CarUpdateView(UpdateView):
+   model = Car # modelo 
+   form_class = CarModelForm  # formulario 
+   template_name = 'car_update.html' # html retornado pro usuario
+   
+   def get_success_url(self):
+      return reverse_lazy('car_detail', kwargs={'pk': self.object.pk}) # (url, id)
+
+
+class CarDeleteView(DeleteView):
+   model = Car
+   template_name = 'car_delete.html'
+   success_url = '/cars/'
+
 
 
 

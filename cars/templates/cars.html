@@ -49,7 +49,7 @@
          max-width: 1200px;
          margin: auto;
       }
-
+   
       .car-card {
          background-color: white;
          border-radius: 10px;
@@ -61,6 +61,9 @@
 
       .car-card:hover {
          transform: translateY(-5px);
+         h2, p{
+            color: #b424aa;
+         }
       }
 
       .car-card img {
@@ -86,6 +89,12 @@
          font-size: 18px;
          margin-top: 30px;
       }
+
+      a{ 
+         text-decoration: none;
+      }
+      
+     
    </style>
 
    <form method="GET" action="{% url 'cars_list' %}">
@@ -97,11 +106,13 @@
    <div class="car-grid">
       {% if cars %}
          {% for car in cars%}
-            <div class="car-card">
-               <img src="{{car.photo.url}}" alt="{{car.model}} - {{car.brand}}" >
-               <h2>{{car.brand}} {{car.model}}</h2>
-               <p>{{car.factory_year}} - R$ {{car.value}}</p>
-            </div>
+            <a href="{% url 'car_detail' car.pk %}">
+               <div class="car-card">
+                  <img src="{{car.photo.url}}" alt="{{car.model}} - {{car.brand}}" >
+                  <h2>{{car.brand}} {{car.model}}</h2>
+                  <p>{{car.factory_year}} - R$ {{car.value}}</p>
+               </div>
+            </a>
          {% endfor%}
       {% else %}
          <p class="no-results">Nenhum carro encontrado.</p>
