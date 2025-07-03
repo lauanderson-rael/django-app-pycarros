@@ -1,4 +1,4 @@
-aula -> 067
+aula -> 070
 
 ----- libs iniciais -----
 pip install django
