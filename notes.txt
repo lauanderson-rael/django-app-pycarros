@@ -1,4 +1,6 @@
-aula -> 071
+finalizei a aula -> 071
+
+gemini-2.5-flash
 
 ----- libs iniciais -----
 pip install django
